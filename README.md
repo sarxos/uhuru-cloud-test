@@ -1,7 +1,7 @@
 # Development Notes
 
-On how to create JAX-WS web service using Tomcat 7.0, Apache Axis, Maven and 
-Eclipse WTP (Juno). 
+On how to create JAX-WS web service using Tomcat 7.0, reference JAX-WS implementation,
+Maven, Eclipse WTP (Juno) and deploy it to Uhuru AppCloud.
 
 ## Create Web Service
 
@@ -25,8 +25,9 @@ with Maven:
 $ mvn clean package
 ```
 
-Change project packaging structure (required for Tomcat hot deployment and dynamic reloading):
-* source `/src/main/webapp', desctination `/` 
+Change packaging structure in project preferences (this is required for Tomcat hot 
+deployment and dynamic reloading):
+* source `/src/main/webapp`, desctination `/` 
 * source `/target/uhuru-test-1/WEB-INF/lib`, destination `WEB-INF/lib`
 
 After deploying webservice to Tomcat you can now find your service under 
@@ -78,6 +79,8 @@ Then just use your application happily ever after.
 
 You can also use CloudManager GUI to do the same thing, but it works correctly only
 on Windows systems, I guess.
+
+Just FYI, service is using around 85MB of RAM (I set max heap size to 128M).
 
 ## License
 
